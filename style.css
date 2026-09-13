@@ -3,42 +3,32 @@ html {
 }
 
 :root {
-  --color-primary: #d81f26;       /* HPI Red */
-  --color-secondary: #012a4a;     /* HPI Dark Blue/Navy */
+  --color-primary: #2563eb;       /* Blue 600 — modern accent */
+  --color-secondary: #0f172a;     /* Slate 900 — headings, brand */
   --color-background: #ffffff;
-  --color-text: #0b2545;
-  --color-border: #e6eef6;
-  --radius: 8px;
+  --color-text: #334155;
+  --color-border: #e2e8f0;
+  --color-tint: #dbeafe;          /* Blue 100 — card/badge backgrounds */
+  --color-surface: #f8fafc;       /* Slate 50 — subtle panel backgrounds */
+  --radius: 14px;
 }
 
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--color-background);
     color: var(--color-text);
-    /* 1.5 is what the site has always rendered with: Tailwind's reset used to
-       override 1.7 from here. Kept explicit now that the cascade is correct. */
-    line-height: 1.5;
+    /* Bumped from 1.5 for a more spacious, editorial reading rhythm. */
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* ── Section headers ── */
+/* ── Section headers: plain, bold, colored — no decorative bar ── */
 .section-header {
-    position: relative;
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.25rem;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--color-secondary);
-}
-/* the one recurring accent: a short red bar under every section heading */
-.section-header::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    width: 2.5rem;
-    height: 2px;
-    background: var(--color-primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--color-primary);
 }
 .accent-rule {
     width: 2.5rem;
@@ -48,17 +38,41 @@ body {
     margin-bottom: 0.75rem;
 }
 
+/* ── Hero band: full-bleed dark masthead ── */
+.hero-band {
+  background: var(--color-secondary);
+  background-image: radial-gradient(circle at top right, rgba(37, 99, 235, 0.35), transparent 55%);
+}
+.hero-name {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  color: var(--color-primary);
+}
+.hero-name-white {
+  color: #ffffff;
+}
+@media (min-width: 640px) {
+  .hero-name { font-size: 2.25rem; }
+}
 /* ── Publication list ── */
 .pub-list > .publication-item + .publication-item {
   border-top: 1px solid var(--color-border);
 }
 .publication-item {
-  padding: 1rem 2.75rem 1rem 0;
+  padding: 1.1rem 2.75rem 1.1rem 1rem;
+  margin: 0 -1rem;
   position: relative;
+  border-radius: var(--radius);
   transition: background-color 0.2s ease;
 }
 .publication-item:hover {
-  background-color: #fbfcfd;
+  background-color: var(--color-tint);
+}
+.pub-list > .publication-item:hover + .publication-item,
+.pub-list > .publication-item:has(+ .publication-item:hover) {
+  border-top-color: transparent;
 }
 .publication-item.pub-award {
   border-left: 3px solid #f0b429;
@@ -81,12 +95,16 @@ body {
 
 /* Kind + index caption above each title */
 .pub-kind {
-  font-size: 0.7rem;
+  display: inline-block;
+  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #64748b;
-  margin-bottom: 0.15rem;
+  color: var(--color-primary);
+  background: var(--color-tint);
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  margin-bottom: 0.4rem;
 }
 
 /* ── Links ── */
@@ -297,7 +315,7 @@ body {
 .profile-icon-btn:hover {
   border-color: var(--color-primary);
   color: var(--color-primary);
-  background: #fff5f5;
+  background: var(--color-tint);
   text-decoration: none;
 }
 .rg-btn {
@@ -379,11 +397,6 @@ body {
   border-color: var(--color-secondary);
 }
 
-/* Metric labels stay on one line in the narrow sidebar column */
-#citation-metrics .text-gray-500 {
-  white-space: nowrap;
-}
-
 /* ── Plain lists (teaching, academic service) ── */
 .simple-list {
   list-style: none;
@@ -451,21 +464,50 @@ body {
   width: 200px;
   height: 250px;
   object-fit: cover;
-  border-radius: var(--radius);
+  border-radius: 20px;
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.08), 0 25px 45px -20px rgba(0, 0, 0, 0.6);
   flex-shrink: 0;
 }
-.metrics-inline {
-  color: #64748b;
-  text-decoration: none;
-}
-.metrics-inline strong {
-  color: var(--color-secondary);
-  font-weight: 700;
-}
-.metrics-inline:hover {
-  color: var(--color-primary);
+
+/* ── Bio box ── */
+.bio-box {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  padding: 1.75rem;
+  margin: 1.5rem 0 2.5rem;
 }
 
+/* ── Research area cards ── */
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.research-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  background: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.research-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px -20px rgba(15, 23, 42, 0.25);
+  border-color: var(--color-primary);
+}
+.research-icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 12px;
+  background: var(--color-tint);
+  color: var(--color-primary);
+  margin-bottom: 0.9rem;
+}
 /* ── Nav anchors clear the sticky header ── */
 section[id] {
   scroll-margin-top: 5rem;
@@ -524,6 +566,15 @@ select:focus-visible,
   }
   section {
     padding: 0.4rem 0 !important;
+  }
+  .hero-band {
+    background: #fff !important;
+  }
+  .hero-name {
+    color: #000 !important;
+  }
+  .hero-mast-photo {
+    box-shadow: none !important;
   }
   .section-header {
     page-break-after: avoid;
