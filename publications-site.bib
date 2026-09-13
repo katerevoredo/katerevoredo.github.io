@@ -1,0 +1,58 @@
+% Website overlay on top of mypapers.bib.
+%
+% An entry whose key matches one in mypapers.bib PATCHES that entry: only the
+% fields listed here are changed, everything else comes from mypapers.bib. An
+% entry with a key mypapers.bib does not have is ADDED to the list.
+%
+% Fields:
+%   venue       short display name, replacing the long booktitle/journal name
+%   pubkind     caption above the title (default: Journal Article / Conference
+%               Proceedings / Book Chapter / Dataset), e.g. "Workshop Paper"
+%   oa          URL of an open-access version -> green "Open Access" badge
+%   preprint    URL or repo path of a preprint -> orange "Preprint" badge
+%   award       award text -> highlighted card, e.g. "Best Paper Award — ..."
+%   selected    "true" puts the paper in the Selected Publications section
+%   shortvenue  compact venue name used in the Selected Publications header
+%   category    journal | conference | chapter | preprint | dataset
+%   <any field> overrides the value in mypapers.bib; an empty value {} removes it
+%
+% Entries are grouped by category and sorted newest first automatically, and the
+% (J1)/(C7)/(Ch2) index labels are generated, so do not hardcode them.
+% Rebuild with: python3 scripts/build_publications.py
+
+@patch{doi:10.1177/22104968251344447,
+  selected   = {true},
+  shortvenue = {Semantic Web},
+  pages      = {},
+  eprint     = {}
+}
+
+@patch{10.1007/978-3-032-02929-4_23,
+  venue      = {Business Process Management Forum},
+  series     = {Lecture Notes in Business Information Processing},
+  volume     = {564},
+  selected   = {true},
+  shortvenue = {BPM Forum}
+}
+
+@patch{DBLP:journals/bpmj/NovakPBRM23,
+  venue      = {Business Process Management Journal},
+  selected   = {true},
+  shortvenue = {Business Process Management Journal}
+}
+
+@patch{DBLP:journals/sosym/Revoredo23,
+  venue      = {Software and Systems Modeling},
+  selected   = {true},
+  shortvenue = {Software and Systems Modeling}
+}
+
+@patch{DBLP:conf/icpm/BayomieRCM22,
+  selected   = {true},
+  shortvenue = {ICPM}
+}
+
+@patch{DBLP:conf/bpm/BalaRGBMS17,
+  selected   = {true},
+  shortvenue = {BPM}
+}
