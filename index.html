@@ -44,10 +44,7 @@
             <!-- Desktop links -->
             <div class="hidden md:flex space-x-6">
                 <a href="#bio" class="text-sm text-gray-600 hover:text-primary transition duration-150 font-semibold uppercase tracking-wide">Bio</a>
-                <a href="#research" class="text-sm text-gray-600 hover:text-primary transition duration-150 font-semibold uppercase tracking-wide">Research</a>
                 <a href="#publications" class="text-sm text-gray-600 hover:text-primary transition duration-150 font-semibold uppercase tracking-wide">Publications</a>
-                <a href="#teaching" class="text-sm text-gray-600 hover:text-primary transition duration-150 font-semibold uppercase tracking-wide">Teaching</a>
-                <a href="#service" class="text-sm text-gray-600 hover:text-primary transition duration-150 font-semibold uppercase tracking-wide">Service</a>
             </div>
             <!-- Hamburger button (mobile only) -->
             <button id="nav-toggle" class="md:hidden p-2 rounded-md text-secondary hover:text-primary focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
@@ -59,10 +56,7 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-inner">
             <div class="px-4 py-2 flex flex-col space-y-1">
                 <a href="#bio"          class="mobile-nav-link block px-3 py-2.5 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Bio</a>
-                <a href="#research"     class="mobile-nav-link block px-3 py-2.5 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Research</a>
                 <a href="#publications" class="mobile-nav-link block px-3 py-2.5 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Publications</a>
-                <a href="#teaching"     class="mobile-nav-link block px-3 py-2.5 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Teaching</a>
-                <a href="#service"      class="mobile-nav-link block px-3 py-2.5 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Service</a>
             </div>
         </div>
     </nav>
@@ -124,8 +118,7 @@
                         <a href="https://orcid.org/0000-0001-8914-9132" target="_blank" class="profile-icon-btn" title="ORCID" aria-label="ORCID" style="font-size:0.62rem;font-weight:800;color:#a6ce39;letter-spacing:-0.02em;">
                             iD
                         </a>
-                    <!-- CV Download: TODO placeholder — replace REVOREDO-CV.pdf with your real CV -->
-                    <a href="REVOREDO-CV.pdf" target="_blank" class="ml-auto px-5 py-2.5 text-sm text-white font-semibold rounded-full inline-flex items-center bg-primary hover:bg-white hover:text-secondary shadow-sm shadow-black/30 transition-colors duration-200">
+                    <a href="CVKateRevoredo.pdf" target="_blank" class="ml-auto px-5 py-2.5 text-sm text-white font-semibold rounded-full inline-flex items-center bg-primary hover:bg-white hover:text-secondary shadow-sm shadow-black/30 transition-colors duration-200">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 12 11 14 9"/></svg>
                         View CV (PDF)
                     </a>
@@ -137,8 +130,7 @@
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
 
         <div class="pt-2 pb-6">
-            <p class="mb-4 text-gray-700 leading-relaxed">I am a <strong>senior researcher</strong>. I like <strong>machine learning</strong>, <strong>process mining</strong>, and turning messy organizational data into models people can trust.</p>
-            <p class="mb-0 text-gray-700 leading-relaxed">You can find my academic profiles above, and my full publication list below. I occasionally push code to <a href="https://github.com/katerevoredo" target="_blank" class="pro-link">GitHub</a>. Keep reading to know more.</p>
+            <p class="mb-0 text-gray-700 leading-relaxed">I am a senior <strong>researcher</strong>, interested in <strong>process mining</strong>, <strong>predictive process monitoring</strong>, and multi-perspective process analysis. My research integrates process analytics, machine learning, and knowledge-aware methods to study how organizational processes are actually enacted in practice, with a focus on explanation, fairness, and decision support in complex sociotechnical settings.</p>
         </div>
 
         <!-- BIO SECTION -->
@@ -150,54 +142,6 @@
                     <p class="mb-0 text-gray-700 leading-relaxed">Her research interests include process mining and business process intelligence, predictive process monitoring, knowledge representation and integration, and data science.</p>
             </div>
         </section>
-
-        <!-- 2. RESEARCH FOCUS SECTION -->
-<section id="research" class="py-10">
-    <h2 class="section-header">Core Research Areas</h2>
-
-    <div class="research-grid">
-        <div class="research-card">
-            <span class="research-icon-badge">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                     class="h-5 w-5"
-                     viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="2"
-                     stroke-linecap="round"
-                     stroke-linejoin="round">
-                    <path d="M3 3v18h18"></path>
-                    <path d="M7 15l4-4 4 4 4-6"></path>
-                </svg>
-            </span>
-            <h3 class="font-semibold text-base mb-2 text-primary">Process Mining & Predictive Process Monitoring</h3>
-            <p class="text-gray-700 text-sm">
-                My work in this area focuses on data-driven analysis and prediction of business processes: <span class="font-medium">fairness and bias in process mining</span> (conceptualizing biases across the process mining lifecycle and the interventions to mitigate them, as in FairPM); <span class="font-medium">process model repair</span> using domain knowledge and theory revision; and <span class="font-medium">predictive and context-aware process monitoring</span>, including event-case correlation, process performance indicator prediction, and next-activity prediction. I am particularly interested in making process mining outcomes more accurate, explainable, and equitable.
-            </p>
-        </div>
-
-        <div class="research-card">
-            <span class="research-icon-badge">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                     class="h-5 w-5"
-                     viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="2"
-                     stroke-linecap="round"
-                     stroke-linejoin="round">
-                    <polyline points="16 18 22 12 16 6"></polyline>
-                    <polyline points="8 6 2 12 8 18"></polyline>
-                </svg>
-            </span>
-            <h3 class="font-semibold text-base mb-2 text-primary">Knowledge Representation & Ontology Matching</h3>
-            <p class="text-gray-700 text-sm">
-                My doctoral and ongoing work addresses <span class="font-medium">knowledge representation and integration</span>: probabilistic description logics and theory revision for learning and repairing ontologies; and <span class="font-medium">interactive ontology matching</span>, developed through the Alin system, a long-running participant in the Ontology Alignment Evaluation Initiative (OAEI). This work connects data-centric information systems to semantic web and knowledge graph techniques.
-            </p>
-        </div>
-    </div>
-
-</section>
 
         <!-- 3. SELECTED PUBLICATIONS SECTION -->
         <section id="publications" class="py-10">
@@ -3441,72 +3385,6 @@
               });
             })();
         </script>
-
-        <!-- 5. TEACHING SECTION -->
-        <section id="teaching" class="py-10">
-            <h2 class="section-header">Teaching</h2>
-            <p class="text-gray-700 mb-8">My approach to teaching combines theory with hands-on practice: students work with real datasets, process models, and information systems to develop both analytical skills and research intuition.</p>
-
-            <!-- TODO: replace with your actual course history. Example structure kept below. -->
-            <h3 class="text-base font-semibold text-primary mt-6 mb-2"><a href="https://www.informatik.hu-berlin.de" target="_blank" class="pro-link">Humboldt-Universität zu Berlin</a></h3>
-            <ul class="simple-list">
-                    <li>
-                        <span class="li-when">TODO</span>
-                        <span class="li-what">Course name <span class="li-note">Course type</span></span>
-                    </li>
-            </ul>
-        </section>
-
-<!-- 6. SERVICE SECTION -->
-        <section id="service" class="py-10">
-            <h2 class="section-header">Academic Service</h2>
-
-            <div class="service-list">
-                <div class="service-group">
-                    <h3 class="font-semibold text-primary text-sm uppercase tracking-wide mb-3 flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                        Editorial Service
-                    </h3>
-                    <ul class="simple-list">
-                        <li>
-                            <span class="li-when">2026</span>
-                            <span class="li-what">Co-editor, <a href="https://dblp.org/rec/conf/bpm/2025rbpm" target="_blank" class="pro-link">Business Process Management: Responsible BPM Forum, Process Technology Forum, Educators Forum — BPM 2025</a>, LNBIP 565, Springer</span>
-                        </li>
-                        <li>
-                            <span class="li-when">2026</span>
-                            <span class="li-what">Editor, <a href="https://dblp.org/db/conf/emisa/emisa2026" target="_blank" class="pro-link">Proceedings of the 16th International Workshop on Enterprise Modeling and Information Systems Architectures (EMISA 2026)</a>, LNI P-380, GI</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- TODO: replace with your actual program committee / reviewing history -->
-                <div class="service-group">
-                    <h3 class="font-semibold text-primary text-sm uppercase tracking-wide mb-3 flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                        Program Committee
-                    </h3>
-                    <ul class="simple-list">
-                        <li>
-                            <span class="li-when">TODO</span>
-                            <span class="li-what">Conference name</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="service-group">
-                    <h3 class="font-semibold text-primary text-sm uppercase tracking-wide mb-3 flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 12 12 12"/></svg>
-                        Reviewer for Journals
-                    </h3>
-                    <ul class="simple-list">
-                        <li>
-                            <span class="li-when">TODO</span>
-                            <span class="li-what">Journal name</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
 
         <!-- FOOTER -->
         <footer class="mt-12 pt-6 border-t border-gray-300 text-center text-gray-500 text-sm">

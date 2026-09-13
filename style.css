@@ -206,13 +206,6 @@ body {
   color: #1f2937;
 }
 
-/* ── Academic service: one list, not two columns ── */
-.service-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.75rem;
-}
-
 /* ── Publication filter buttons ── */
 .pub-filter-btn {
   padding: 0.4rem 0.9rem;
@@ -344,31 +337,6 @@ body {
   color: var(--color-primary);
 }
 
-/* ── Teaching table ── */
-.teaching-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.9rem;
-}
-.teaching-table th {
-  text-align: left;
-  padding: 0.5rem 0.75rem;
-  background: var(--color-secondary);
-  color: white;
-  font-weight: 600;
-}
-.teaching-table td {
-  padding: 0.45rem 0.75rem;
-  border-bottom: 1px solid var(--color-border);
-  vertical-align: top;
-}
-.teaching-table tr:last-child td {
-  border-bottom: none;
-}
-.teaching-table tr:hover td {
-  background: #f8fafc;
-}
-
 /* ── Publication sort control ── */
 .pub-sort {
   display: inline-flex;
@@ -397,59 +365,6 @@ body {
   border-color: var(--color-secondary);
 }
 
-/* ── Plain lists (teaching, academic service) ── */
-.simple-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.simple-list li {
-  display: flex;
-  align-items: baseline;
-  gap: 1rem;
-  padding: 0.3rem 0;
-  line-height: 1.5;
-}
-.li-when {
-  flex: 0 0 9.5rem;
-  color: #64748b;
-  font-size: 0.8rem;
-  font-variant-numeric: tabular-nums;
-}
-.li-what {
-  flex: 1;
-  color: #1f2937;
-  font-size: 0.95rem;
-}
-.li-note {
-  color: #64748b;
-  font-size: 0.8rem;
-  white-space: nowrap;
-}
-@media (max-width: 640px) {
-  .simple-list li { flex-direction: column; gap: 0.1rem; }
-  .li-when { flex: none; }
-}
-
-/* ── Academic service groups ── */
-.service-group h3 {
-  padding-bottom: 0.35rem;
-  border-bottom: 1px solid var(--color-border);
-}
-
-
-/* Links inside plain lists: same weight as the rest, underlined on hover */
-.simple-list .pro-link {
-  font-weight: 400;
-  color: #1f2937;
-  text-decoration: underline;
-  text-decoration-color: #cbd5e1;
-  text-underline-offset: 2px;
-}
-.simple-list .pro-link:hover {
-  color: var(--color-primary);
-  text-decoration-color: currentColor;
-}
 .pub-badge-code {
   background: #f1f5f9;
   color: #334155;
@@ -478,36 +393,6 @@ body {
   margin: 1.5rem 0 2.5rem;
 }
 
-/* ── Research area cards ── */
-.research-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.25rem;
-  margin-bottom: 1.5rem;
-}
-.research-card {
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  background: #fff;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-.research-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 32px -20px rgba(15, 23, 42, 0.25);
-  border-color: var(--color-primary);
-}
-.research-icon-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 12px;
-  background: var(--color-tint);
-  color: var(--color-primary);
-  margin-bottom: 0.9rem;
-}
 /* ── Nav anchors clear the sticky header ── */
 section[id] {
   scroll-margin-top: 5rem;
@@ -580,8 +465,7 @@ select:focus-visible,
     page-break-after: avoid;
     break-after: avoid;
   }
-  .publication-item,
-  .simple-list li {
+  .publication-item {
     page-break-inside: avoid;
     break-inside: avoid;
   }
@@ -589,8 +473,7 @@ select:focus-visible,
     border-color: #999;
   }
   /* spell out the destinations that matter on paper */
-  .pub-badge[href^="http"]::after,
-  .simple-list a[href^="http"]::after {
+  .pub-badge[href^="http"]::after {
     content: " (" attr(href) ")";
     font-size: 0.85em;
     font-weight: 400;
